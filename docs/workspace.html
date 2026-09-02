@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#101b2d">
+    <title>Codey — Chief Architect Workspace</title>
+    <link rel="stylesheet" href="workspace.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="workspace.html">CODEY <span>Chief Architect</span></a>
+      <div class="project-switch"><label for="project-select">Project</label><select id="project-select" aria-label="Current project"></select></div>
+      <button class="secondary" id="new-project">New project</button>
+      <button class="secondary" id="export-project">Export</button>
+    </header>
+    <main>
+      <aside class="sidebar" aria-label="Workspace sections">
+        <button class="nav active" data-view="overview">Overview</button>
+        <button class="nav" data-view="requirements">Requirements</button>
+        <button class="nav" data-view="architecture">Architecture</button>
+        <button class="nav" data-view="tasks">Task contracts</button>
+        <button class="nav" data-view="decisions">Decisions</button>
+        <button class="nav" data-view="tests">Test plan</button>
+        <button class="nav" data-view="handoff">Handoff</button>
+        <p class="local-note">Saved privately in this browser.</p>
+      </aside>
+      <section class="content">
+        <div id="overview" class="view active">
+          <div class="eyebrow">Engineering command center</div><h1 id="project-title">Untitled project</h1>
+          <p class="lede">Turn an objective into a traceable, build-ready plan.</p>
+          <div class="card project-card"><label>Project name<input id="name-input" placeholder="e.g., Customer portal"></label><label>Objective<textarea id="objective-input" placeholder="What are we building, for whom, and why?"></textarea></label><label>Project status<select id="status-input"><option>Discovery</option><option>Architecture</option><option>Implementation</option><option>Verification</option><option>Blocked</option><option>Complete</option></select></label><button id="save-overview">Save project</button></div>
+          <div class="stats" id="stats"></div>
+          <div class="card"><h2>Architect’s next move</h2><p id="next-move">Capture the objective and constraints, then define the architecture before implementation begins.</p></div>
+        </div>
+        <div id="requirements" class="view"><div class="section-head"><div><div class="eyebrow">Traceability starts here</div><h1>Requirements</h1></div><button class="add" data-add="requirements">Add requirement</button></div><div id="requirements-list" class="item-list"></div></div>
+        <div id="architecture" class="view"><div class="section-head"><div><div class="eyebrow">System design</div><h1>Architecture</h1></div></div><div class="card"><label>Architecture summary<textarea id="architecture-input" placeholder="Describe the system, major components, technology choices, boundaries, and data flow."></textarea></label><label>Constraints and standards<textarea id="constraints-input" placeholder="Security, compatibility, performance, code standards, deployment constraints…"></textarea></label><button id="save-architecture">Save architecture</button></div></div>
+        <div id="tasks" class="view"><div class="section-head"><div><div class="eyebrow">Bounded delegation</div><h1>Task contracts</h1></div><button class="add" data-add="tasks">New task contract</button></div><div id="tasks-list" class="item-list"></div></div>
+        <div id="decisions" class="view"><div class="section-head"><div><div class="eyebrow">Architecture decision records</div><h1>Decisions</h1></div><button class="add" data-add="decisions">Record decision</button></div><div id="decisions-list" class="item-list"></div></div>
+        <div id="tests" class="view"><div class="section-head"><div><div class="eyebrow">Definition of done</div><h1>Test plan</h1></div><button class="add" data-add="tests">Add test requirement</button></div><div id="tests-list" class="item-list"></div></div>
+        <div id="handoff" class="view"><div class="eyebrow">Development handoff</div><h1>Project brief</h1><p class="lede">A concise, shareable summary generated from your workspace.</p><pre id="handoff-output"></pre><button id="copy-handoff">Copy handoff</button></div>
+      </section>
+    </main>
+    <dialog id="editor"><form method="dialog" id="editor-form"><div class="dialog-head"><h2 id="editor-title">Add item</h2><button class="icon" value="cancel" aria-label="Close">×</button></div><div id="editor-fields"></div><div class="dialog-actions"><button class="secondary" value="cancel">Cancel</button><button value="default" id="save-item">Save</button></div></form></dialog>
+    <script src="workspace.js"></script>
+  </body>
+</html>
