@@ -9,3 +9,7 @@ This repository holds the public bot information and privacy-policy page for **C
 - **Miniapp:** [Open the Chief Architect workspace](https://rocketmanwookie.github.io/codey-hermes-bot-info/workspace.html)
 
 The published policy is in [`docs/index.html`](docs/index.html).
+
+## Codey command library
+
+- [`/stack` — constraint-first technology-stack selection](bots/codey.md#command-stack)
